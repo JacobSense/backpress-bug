@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+
+# User-specific configurations
+**/.gradle
+.idea/
+**/.idea
+!/.idea/copyright

@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
     private val onBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
             Log.d("BackHandler", "MainActivity onBackPressedCallback called")
+
+            /**
+             * Desired behavior is to let the fragment NavController pop it's back stack until
+             * there is nothing left, then close the app. However, any custom behavior here is not
+             * intended to be executed when a lower level OnBackPressedCallback exists e.g. BackHandler
+             */
             if (!navHostFragment.navController.popBackStack()) {
                 finish()
             }
